@@ -8,6 +8,11 @@ body {
   background-color: rgb(240, 236, 236);
 }
 
+main {
+    margin-top: 40px;
+    padding-top: 20px;
+}
+
 .container-fluid {
   position: relative;
   text-align: start;

@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(240, 236, 236);
+}
+
+.container-fluid {
+  position: relative;
+  text-align: start;
+  color: white;
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+  font-size: 32px;
+}
+
+.round-image {
+  border-radius: 20%;
+}

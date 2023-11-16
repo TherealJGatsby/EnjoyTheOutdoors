@@ -18,6 +18,8 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="css/index.css" />
+    <script src="scripts/mountainData.js"></script>
+    <script src="scripts/mountain.js"></script>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
@@ -63,11 +65,18 @@
         </div>
       </div>
     </nav>
-    <div>
-      <main>
-        
-      </main>
-    </div>
+
+    <main>
+      <form action="" id="mountainForm">
+        <select id="mountainList" class="form-select mt-5" name="mountain">
+          <option>Select Mountain</option>
+        </select>
+      </form>
+
+      <div class="m-4 p-4 border" >
+        <div>Mountain: <span id="mountainName"></span></div>
+      </div>
+    </main>
 
     <footer>
       <div class="footerContainer">

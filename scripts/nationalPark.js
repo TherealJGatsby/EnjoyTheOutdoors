@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const stateSelected = document.getElementById("stateForm");
-    stateSelected.onchange = filterStates;
+    const stateForm = document.getElementById("stateForm");
+    stateForm.onchange = filterStates;
     const parkType = document.getElementById("parkType");
     parkType.onchange = filterStates;
 
@@ -39,7 +39,7 @@ function filterStates() {
     if (state != "Select State") {
         filteredStates = filteredStates.filter(f => f.State == state)
     }
-    console.log(filteredStates);
+    // console.log(filteredStates);
     if (parkType != "Select Type") {
         filteredStates = filteredStates.filter(f => f.LocationName.includes(parkType));
     }

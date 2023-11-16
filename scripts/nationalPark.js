@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const stateSelected = document.getElementById("stateSelected");
+    const stateSelected = document.getElementById("stateForm");
     stateSelected.onchange = filterStates;
     const parkType = document.getElementById("parkType");
     parkType.onchange = filterStates;
@@ -36,15 +36,15 @@ function filterStates() {
     // console.log(parkType)
     // state selected from array
     let filteredStates = nationalParksArray;
-    if (state != "Select state") {
+    if (state != "Select State") {
         filteredStates = filteredStates.filter(f => f.State == state)
     }
     console.log(filteredStates);
-    if (parkType != "Select type") {
+    if (parkType != "Select Type") {
         filteredStates = filteredStates.filter(f => f.LocationName.includes(parkType));
     }
 
-    console.log(filteredStates);
+    // console.log(filteredStates);
 
     displayStates(filteredStates);
 
@@ -53,34 +53,42 @@ function filterStates() {
 function displayStates(filteredStates) {
 
     const statesContainer = document.querySelector("#stateName")
-    statesContainer.classList.add("card")
+    // statesContainer.classList.add("card")
     // clear all elements
     statesContainer.innerHTML = "";
 
     filteredStates.forEach(state => {
 
         displayName(state, statesContainer);
-        addAddress(state, statesContainer);
-        addCity(state, statesContainer);
-        addState(state, statesContainer);
-        addZipCode(state, statesContainer);
-        addPhone(state, statesContainer);
-        addFax(state, statesContainer);
-        addLatitude(state, statesContainer);
-        addLongitude(state, statesContainer);
 
     });
 
-    console.log
 }
 
 function displayName(state, parentDiv) {
     // create a div for each state
     const stateDiv = document.createElement("div");
     stateDiv.classList.add("card");
-    stateDiv.innerText = "Name: " + state.LocationName;
-    // add product to the container
+    stateDiv.classList.add("mb-3");
     parentDiv.appendChild(stateDiv);
+
+    const cardHeader = document.createElement("div")
+    cardHeader.classList.add("card-header")
+    cardHeader.innerText = "Name: " + state.LocationName;
+    stateDiv.appendChild(cardHeader);
+
+    const cardBody = document.createElement("div")
+    cardBody.classList.add("card-body")
+    stateDiv.appendChild(cardBody);
+
+    addAddress(state, cardBody);
+    addCity(state, cardBody);
+    addState(state, cardBody);
+    addZipCode(state, cardBody);
+    addPhone(state, cardBody);
+    addFax(state, cardBody);
+    addLatitude(state, cardBody);
+    addLongitude(state, cardBody);
 
 }
 

@@ -78,7 +78,7 @@ function displayName(state, parentDiv) {
     stateDiv.appendChild(cardHeader);
 
     const cardBody = document.createElement("div")
-    cardBody.classList.add("card-body")
+    cardBody.classList.add("card-body");
     stateDiv.appendChild(cardBody);
 
     addAddress(state, cardBody);
@@ -142,8 +142,6 @@ function addLongitude(state, parentDiv) {
     parkLongitude.innerText = "Longitude: " + state.Longitude;
     parentDiv.appendChild(parkLongitude);
 }
-
-
 
 
 

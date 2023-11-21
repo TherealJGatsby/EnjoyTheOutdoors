@@ -49,19 +49,23 @@ function displayMountain(mountain, parentDiv) {
     mountainDiv.classList.add("mb-3");
     parentDiv.appendChild(mountainDiv);
 
-    const cardHeader = document.createElement("div")
-    cardHeader.classList.add("card-header")
+    const cardHeader = document.createElement("div");
+    cardHeader.classList.add("card-header");
     cardHeader.innerText = "Name: " + mountain.name;
     mountainDiv.appendChild(cardHeader);
 
-    const cardBody = document.createElement("div")
-    cardBody.classList.add("card-body")
+    const cardBody = document.createElement("div");
+    cardBody.classList.add("card-body");
     mountainDiv.appendChild(cardBody);
+
+    // creat image div
+    const imageDiv = document.createElement("div");
+    imageDiv.classList.add("card-body");
+    mountainDiv.appendChild(imageDiv);
 
     addDescription(mountain, cardBody);
     addElevation(mountain, cardBody);
     addEffort(mountain, cardBody);
-    addCoordinates(mountain, cardBody);
     addImage(mountain, cardBody);
 }
 
@@ -83,15 +87,11 @@ function addEffort(mountain, parentDiv) {
     parentDiv.appendChild(mountainEffort);
 }
 
-// ask Gregor for help
-// function addCoordinates(mountain, parentDiv) {
-//     const mountainCoordinates = document.createElement("p");
-//     mountainCoordinates.innerText = "Coordinates: " + mountain.coords.lat.lng;
-//     parentDiv.appendChild(mountainCoordinates);
-// }
+function addImage(mountain, parentDiv) {
 
-// function addImage(mountain, parentDiv) {
-//     const mountainImage = document.createElement("p");
-//     mountainImage.innerText = "Image: " + mountain.img;
-//     parentDiv.appendChild(mountainImage);
-// }
+    const mountainImage = document.createElement("img");
+    mountainImage.src = `images/${mountain.img}`;
+    parentDiv.appendChild(mountainImage);
+
+}
+
